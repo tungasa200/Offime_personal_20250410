@@ -1,0 +1,59 @@
+#schedule { margin-bottom: 0 }
+#schedule .calendar { width: 100%; text-align: center; transition: .3s; height: calc(100vh - var(--header-height))}
+#schedule .calendar-container.active .calendar { height: 40vh; overflow: hidden; }
+#schedule .calendar .calendar-header { display: flex; justify-content: space-between; align-items: center; padding: 0 2rem}
+#schedule .calendar .calendar-header p { cursor: pointer; color: var(--primary_m); }
+#schedule .calendar .cal-month { font-size: var(--font_lg); color: var(--primary_m);}
+#schedule .calendar .weekdays { background-color: var(--natural_20); border-top: 1px solid var(--natural_40);border-bottom: 1px solid var(--natural_40)}
+#schedule .calendar .weekdays,
+#schedule .calendar .days { display: grid; grid-template-columns: repeat(7, 1fr); font-size: var(--font_md);}
+#schedule .calendar .days { grid-template-rows: repeat(6, 9rem); }
+#schedule .calendar-container.active .calendar .days {overflow-y: scroll; height: 100%;}
+#schedule .calendar .weekdays div {  padding: 5px;}
+#schedule .calendar .day { display: flex; justify-content: flex-start; gap: var(--space_xsm); align-items: center; flex-direction: column; cursor: pointer; border-bottom: 1px solid var(--natural_40); padding: 2px; overflow: hidden;}
+#schedule .calendar .day p { text-align: center; margin: 2px 0; }
+#schedule .calendar .day.inactive p { color: var(--natural_50); }
+#schedule .calendar .day.active { border: 1px solid var(--primary_m); }
+#schedule .calendar .day.today p{ color: var(--primary_m); }
+
+#schedule .calendar .sched { width: 100%; padding:0 2px; text-align: left; opacity: .8; border-radius: 5px;}
+#schedule .calendar .day.inactive .sched { opacity: .5; }
+#schedule .calendar .sched p { display: none; color: var(--natural_0) !important;  white-space: nowrap; overflow: hidden; text-overflow: ellipsis;}
+#schedule .calendar .sched p.active { display: block; }
+#schedule .calendar .sched.blue { background-color: var(--primary_m) }
+#schedule .calendar .sched.navy { background-color: var(--primary_02) }
+#schedule .calendar .sched.yellow { background-color: var(--primary_03) }
+#schedule .calendar .sched.yellow p {color: var(--natural_80) !important; }
+#schedule .calendar .sched.green { background-color: var(--primary_04) }
+#schedule .calendar .sched.red { background-color: var(--primary_05) }
+
+#schedule .sched-btn { display: flex; justify-content: center; align-items: center; position: absolute; bottom: var(--space_md); right: var(--space_md); width: var(--space_xlg); height: var(--space_xlg); border-radius: 50%; background-color: var(--primary_m); box-shadow: 2px 2px 4px rgba(0,0,0,0.2); cursor: pointer;}
+#schedule .sched-btn img { display: block; width: 1.5rem; filter: invert(1); }
+#schedule .dark-area { display: none; position: fixed; top: 50%; left: 50%; transform:translate(-50%,-50%); width: var(--device-width); height: 100vh; background-color: rgba(0,0,0,0.4); z-index: 900; cursor: pointer;}
+#schedule .dark-area.active { display: block }
+#schedule .schedule-detail { display: block; position: fixed; bottom: 0; width: var(--device-width); height: calc(60vh - var(--header-height)); background-color: var(--natural_0); border-radius: var(--round-xlg) var(--round-xlg) 0 0; box-shadow: 0 -2px .5rem rgba(0,0,0,.2); z-index: 990; transform: translateY(100%); transition: .3s; overflow:hidden;}
+#schedule .schedule-detail.active { transform: translateY(0); }
+#schedule .schedule-detail .color_list { display: flex; gap: 1rem; }
+#schedule .schedule-detail .color_list li { width: 1rem; height: 1rem; border-radius: 50%; cursor: pointer;}
+#schedule .schedule-detail .color_list li.selected { border: 2px solid var(--natural_70); }
+#schedule .schedule-detail .sched-date { background-color: var(--natural_0); padding:2rem 1rem 1rem 1rem;}
+#schedule .schedule-detail .inner { overflow-y: scroll; height: 100%;  padding-bottom: 10rem; }
+#schedule .schedule-detail #selectedDate { font-size: var(--font_lg); width: 100%; border: none; background-color: transparent; }
+#schedule .schedule-detail .item-flex { display: flex; align-items: center; justify-content: space-between; gap: 1rem }
+#schedule .schedule-detail .input-time { font-size: var(--font_md); border: none; background-color: var(--natural_30); border-radius: var(--round-md); padding: 8px 1rem; width: 100%}
+#schedule .schedule-detail .textarea { border: none; background-color: var(--natural_30); border-radius: var(--round-md); }
+
+#schedule .calendar-container.active .days::-webkit-scrollbar {width: 0px;}
+#schedule .calendar-container.active .days::-webkit-scrollbar-thumb { background: transparent;}
+
+#schedule .schedule-detail .inner::-webkit-scrollbar {width: 0px;}
+#schedule .schedule-detail .inner::-webkit-scrollbar-thumb { background: transparent;}
+
+#schedule .ym-picker { padding:var(--space_lg) 16px; text-align: center; background: var(--natural_0);}
+#schedule .ym-picker .year-picker { display: flex; justify-content: center; align-items: center; margin-bottom: var(--space_lg); gap: 1rem;}
+#schedule .ym-picker .month-picker { display: grid; grid-template-columns: repeat(4, 1fr); margin-bottom: var(--space_lg);}
+#schedule .ym-picker .month {display: flex; justify-content: center; align-items: center;height: 4rem}
+#schedule .ym-picker .month p {width: 3rem; height: 3rem; display: flex; align-items: center; justify-content: center; padding: var(--space_md); border-radius: 50%; background-color: var(--natural_0); cursor: pointer; font-size: var(--font_md);}
+#schedule .ym-picker .month.selected p { background-color: var(--primary_m); color: var(--natural_0); font-weight: bold; }
+#schedule .ym-picker .btn-box { display: flex; justify-content: center; gap: 1rem; align-items: center; font-size: var(--font_md); }
+#schedule .ym-picker .selected-ym p { color:var(--primary_m); font-weight: 500; }

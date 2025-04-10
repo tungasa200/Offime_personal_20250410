@@ -1,0 +1,7 @@
+header { display: block; position: fixed; top: 0; left: 50%; width: var(--device-width); padding: 0 1rem; transform: translateX(-50%); z-index: 100; }
+header nav { display: flex; justify-content: space-between; align-items: center; box-shadow: 0 2px 4px rgba(0,0,0,0.1);}
+header nav .back-area { display: flex; gap: 1rem; }
+header nav h4 { font-size: var(--font_md); color: var(--natural_60);}
+header nav .btn-box { display: flex; gap: .5rem; }
+header nav button { width: 1.6rem; position: relative;}
+header nav button img { display: block; width: 100%; opacity: .7 }

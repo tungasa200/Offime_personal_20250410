@@ -1,0 +1,737 @@
+/* 작성자 : 김성우 */
+/* 작성일 : 20250324 */
+
+:root {
+  --primary_m: #3299fe;
+  --primary_l: #d1e7fc;
+  --primary_k: #35485b;
+
+  --primary_02: #6979f8;
+  --primary_03: #ffda75;
+  --primary_04: #4dc9aa;
+  --primary_05: #ff6666;
+  --error: #f93827;
+
+  /*disable or lighten = opacity:80*/
+  /*darken = filter: brightness(.7)*/
+  --device-width: 500px;
+
+  --natural_100: #000;
+  --natural_80: #161616;
+  --natural_70: #1d1d1d;
+  --natural_60: #646464;
+  --natural_50: #8d8d8d;
+  --natural_40: #dedede;
+  --natural_30: #dee2e6;
+  --natural_10: #f2f4f6;
+  --natural_20: #e9ecef;
+  --natural_0: #fff;
+
+  --space_xlg: 3rem;
+  --space_lg: 2rem;
+  --space_md: 1rem;
+  --space_sm: 0.5rem;
+  --space_xsm: 0.25rem;
+
+  --font_xxlg: 2.5rem;
+  --font_xlg: 2rem;
+  --font_lg: 1.5rem;
+  --font_md: 1rem;
+  --font_sm: 0.875rem;
+  --font_xsm: 0.6875rem;
+
+  --round-xlg: 3rem;
+  --round-lg: 1rem;
+  --round-md: 0.625rem;
+  --round-sm: 0.3125rem;
+
+  --header-height: 6rem;
+}
+
+/* body, html 1rem 정의 ---------------------------------------------------------------*/
+html,
+body {
+  font-size: 16px;
+}
+#main {
+  min-height: 100vh;
+  padding-top: var(--header-height);
+}
+
+/* layout ---------------------------------------------------------------*/
+
+/*마크업 기본 구조 참고*/
+/*컴포넌트 단위가 아닌 HTML 전체 구조*/
+/*
+<html>
+    <body>        
+        <div id="container">
+            <div id="device>
+                <header id="header" class="header">
+                    헤더 내용
+                </header>
+                <main id="main" class="페이지 이름">
+                    <section class="sec">
+                        <div class="inner">
+                            <div class="item">
+                                컨텐츠
+                            </div>
+                        </div>
+                    </section>
+                </main>
+                <footer id="footer" class="footer">
+                    푸터 내용
+                </footer>
+            </div>
+        </div>
+    </body>
+</html>
+*/
+
+#container {
+  display: block;
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  background-color: var(--primary_l);
+  overflow: hidden;
+}
+#device {
+  display: block;
+  position: relative;
+  width: 100%;
+  max-width: var(--device-width);
+  height: 100%;
+  border: 1px solid var(--natural_50);
+  margin: 0 auto;
+  background-color: var(--natural_10);
+  box-shadow: 2px 5px 5px rgba(0, 0, 0, 0.3);
+  overflow-y: scroll;
+  box-sizing: content-box;
+}
+.sec {
+  display: block;
+  position: relative;
+  width: 100%;
+  margin-bottom: var(--space_xlg);
+}
+.inner {
+  width: 100%;
+  max-width: calc(100% - 2rem);
+  position: relative;
+  margin: 0 auto;
+}
+.item {
+  border: var(--round-lg);
+  padding: var(--space_md);
+  overflow: hidden;
+  border-radius: var(--round-lg);
+}
+
+/*배경 색*/
+.bg_pm {
+  background-color: var(--primary_m);
+}
+.bg_pl {
+  background-color: var(--primary_l);
+}
+.bg_pk {
+  background-color: var(--primary_k);
+}
+.bg_p02 {
+  background-color: var(--primary_02);
+}
+.bg_p03 {
+  background-color: var(--primary_03);
+}
+.bg_p04 {
+  background-color: var(--primary_04);
+}
+.bg_p05 {
+  background-color: var(--primary_05);
+}
+.bg_e {
+  background-color: var(--error);
+}
+
+/* layout - youtube iframe*/
+.yt_wrap {
+  position: relative;
+  padding-top: 56.25%;
+}
+.yt_wrap.shorts {
+  position: relative;
+  padding-top: 177.25%;
+}
+.yt_wrap iframe {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  border: 0;
+}
+
+/* font size ---------------------------------------------------------------*/
+[class*="fs_"] {
+  font-family: "Pretendard";
+  font-weight: 400;
+  line-height: 1.4;
+  color: var(--natural_80);
+}
+.fs_xxlg {
+  font-size: var(--font_xxlg);
+}
+.fs_xlg {
+  font-size: var(--font_xlg);
+}
+.fs_lg {
+  font-size: var(--font_lg);
+}
+.fs_md {
+  font-size: var(--font_md);
+}
+.fs_sm {
+  font-size: var(--font_sm);
+}
+.fs_xsm {
+  font-size: var(--font_xsm);
+}
+
+.title-md {
+  font-size: var(--font_xlg);
+}
+.title-lg {
+  font-size: 60px;
+}
+
+h1 {
+  font-size: var(--font_xlg);
+  color: var(--natural_80);
+}
+h2 {
+  font-size: var(--font_xlg);
+  color: var(--natural_80);
+}
+h3 {
+  font-size: var(--font_lg);
+  color: var(--natural_80);
+}
+h4 {
+  font-size: var(--font_md);
+  color: var(--natural_80);
+}
+span {
+  font-size: 12px;
+  color: var(--natural_80);
+}
+
+.txt-a-c {
+  text-align: center;
+}
+.txt-a-l {
+  text-align: left;
+}
+.txt-a-r {
+  text-align: right;
+}
+
+/* margin & padding */
+.mlr-a {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.m_xlg {
+  margin: var(--space_xlg);
+}
+.m_lg {
+  margin: var(--space_lg);
+}
+.m_md {
+  margin: var(--space_md);
+}
+.m_sm {
+  margin: var(--space_sm);
+}
+.m_xsm {
+  margin: var(--space_xsm);
+}
+
+.mb_xlg {
+  margin-bottom: var(--space_xlg);
+}
+.mb_lg {
+  margin-bottom: var(--space_lg);
+}
+.mb_md {
+  margin-bottom: var(--space_md);
+}
+.mb_sm {
+  margin-bottom: var(--space_sm);
+}
+.mb_xsm {
+  margin-bottom: var(--space_xsm);
+}
+
+.mt_xlg {
+  margin-top: var(--space_xlg);
+}
+.mt_lg {
+  margin-top: var(--space_lg);
+}
+.mt_md {
+  margin-top: var(--space_md);
+}
+.mt_sm {
+  margin-top: var(--space_sm);
+}
+.mt_xsm {
+  margin-top: var(--space_xsm);
+}
+
+.ml_xlg {
+  margin-left: var(--space_xlg);
+}
+.ml_lg {
+  margin-left: var(--space_lg);
+}
+.ml_md {
+  margin-left: var(--space_md);
+}
+.ml_sm {
+  margin-left: var(--space_sm);
+}
+.ml_xsm {
+  margin-left: var(--space_xsm);
+}
+
+.mr_xlg {
+  margin-right: var(--space_xlg);
+}
+.mr_lg {
+  margin-right: var(--space_lg);
+}
+.mr_md {
+  margin-right: var(--space_md);
+}
+.mr_sm {
+  margin-right: var(--space_sm);
+}
+.mr_xsm {
+  margin-right: var(--space_xsm);
+}
+
+.p_xlg {
+  padding: var(--space_xlg);
+}
+.p_lg {
+  padding: var(--space_lg);
+}
+.p_md {
+  padding: var(--space_md);
+}
+.p_sm {
+  padding: var(--space_sm);
+}
+.p_xsm {
+  padding: var(--space_xsm);
+}
+
+.pb_xlg {
+  padding-bottom: var(--space_xlg);
+}
+.pb_lg {
+  padding-bottom: var(--space_lg);
+}
+.pb_md {
+  padding-bottom: var(--space_md);
+}
+.pb_sm {
+  padding-bottom: var(--space_sm);
+}
+.pb_xsm {
+  padding-bottom: var(--space_xsm);
+}
+
+.pt_xlg {
+  padding-top: var(--space_xlg);
+}
+.pt_lg {
+  padding-top: var(--space_lg);
+}
+.pt_md {
+  padding-top: var(--space_md);
+}
+.pt_sm {
+  padding-top: var(--space_sm);
+}
+.pt_xsm {
+  padding-top: var(--space_xsm);
+}
+
+.pl_xlg {
+  padding-left: var(--space_xlg);
+}
+.pl_lg {
+  padding-left: var(--space_lg);
+}
+.pl_md {
+  padding-left: var(--space_md);
+}
+.pl_sm {
+  padding-left: var(--space_sm);
+}
+.pl_xsm {
+  padding-left: var(--space_xsm);
+}
+
+.pr_xlg {
+  padding-right: var(--space_xlg);
+}
+.pr_lg {
+  padding-right: var(--space_lg);
+}
+.pr_md {
+  padding-right: var(--space_md);
+}
+.pr_sm {
+  padding-right: var(--space_sm);
+}
+.pr_xsm {
+  padding-right: var(--space_xsm);
+}
+
+/* text color */
+.tc-pm {
+  color: var(--primary_m);
+}
+.tc-p2 {
+  color: var(--primary_02);
+}
+.tc-p3 {
+  color: var(--primary_03);
+}
+.tc-p4 {
+  color: var(--primary_04);
+}
+.tc-p5 {
+  color: var(--primary_05);
+}
+.tc-e {
+  color: var(--error);
+}
+.tc-w {
+  color: var(--natural_0);
+}
+.tc-b {
+  color: var(--natural_100);
+}
+
+/* form */
+/* input */
+input.input-txt {
+  display: block;
+  max-width: 100%;
+  background-color: var(--natural_0);
+  border: 1px solid var(--primary_m);
+  padding: 5px 1rem;
+  transition: 0.2s;
+}
+input.input-file {
+  display: block;
+  max-width: 100%;
+  background-color: var(--natural_0);
+  border: 1px solid var(--primary_m);
+  padding: 5px 1rem;
+  transition: 0.2s;
+}
+input.submit {
+  width: 100%;
+  background-color: var(--primary_m);
+  border: none;
+  cursor: pointer;
+  color: var(--natural_0);
+  box-shadow: 0px 8px 0 var(--primary_m);
+  transition: 0.2s;
+}
+input.submit-f {
+  width: 100%;
+  background-color: var(--primary_m);
+  border: none;
+  cursor: pointer;
+  color: var(--natural_0);
+  transition: 0.2s;
+}
+
+input.input-sm {
+  width: 160px;
+  height: 56px;
+  border-radius: 30px;
+  font-size: var(--font_lg);
+}
+input.input-lg {
+  width: 320px;
+  height: 56px;
+  border-radius: 30px;
+  font-size: var(--font_lg);
+}
+input.input-xlg {
+  width: 640px;
+  height: 56px;
+  border-radius: 30px;
+  font-size: var(--font_lg);
+}
+input.input-max {
+  width: 100%;
+  height: 56px;
+  border-radius: 30px;
+  font-size: var(--font_lg);
+}
+
+/* textarea */
+textarea.textarea {
+  width: 100%;
+  border: 1px solid var(--primary_m);
+  border-radius: var(--round-lg);
+  padding: 1rem;
+  font-size: var(--font_md);
+  transition: 0.2s;
+}
+textarea.textarea:focus {
+  border: 1px solid var(--second_m);
+}
+
+/* label */
+label.label {
+  display: block;
+  font-size: var(--font_lg);
+}
+
+/* select */
+select.select {
+  max-width: 100%;
+  border: 1px solid var(--primary_m);
+  text-align: center;
+}
+select.select-md {
+  width: 160px;
+  padding: 5px 0;
+  border-radius: 50px;
+  font-size: var(--font_lg);
+}
+
+/* radio */
+.radio_list {
+  display: flex;
+  gap: 2rem;
+  align-items: center;
+}
+.radio_list li {
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+}
+.radio_list label {
+  color: var(--natural_60);
+}
+.radio-sm {
+  font-size: var(--font_sm);
+}
+.radio-md {
+  font-size: var(--font_md);
+}
+.radio-lg {
+  font-size: var(--font_lg);
+}
+
+/* btn */
+.btn {
+  display: block;
+  max-width: 100%;
+  border: none;
+  cursor: pointer;
+  color: var(--natural_0);
+  border-radius: 100px;
+  transition: 0.2s;
+}
+.btn.btn-sq {
+  border-radius: var(--round-md);
+}
+.btn > a {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  color: var(--natural_0);
+}
+
+.btn.btn-max {
+  width: 100%;
+  padding: 1rem 2rem;
+}
+.btn.btn-lg {
+  width: 20rem;
+  padding: 1rem 2rem;
+}
+.btn.btn-md {
+  width: 10rem;
+  padding: 0.5rem 1rem;
+}
+.btn.btn-sm {
+  width: 5rem;
+  padding: 5px 0.5rem;
+}
+
+/*버튼 기본*/
+.btn.btn-pm {
+  background-color: var(--primary_m);
+}
+.btn.btn-pl {
+  background-color: var(--primary_l);
+}
+.btn.btn-pk {
+  background-color: var(--primary_k);
+}
+.btn.btn-p02 {
+  background-color: var(--primary_02);
+}
+.btn.btn-p03 {
+  background-color: var(--primary_03);
+}
+.btn.btn-p04 {
+  background-color: var(--primary_04);
+}
+.btn.btn-p05 {
+  background-color: var(--primary_05);
+}
+.btn.btn-e {
+  background-color: var(--error);
+}
+
+/*선형 버튼*/
+.btn.btn-pm-f {
+  background-color: transparent;
+  border: 1px solid var(--primary_m);
+  color: var(--primary_m);
+}
+.btn.btn-pl-f {
+  background-color: transparent;
+  border: 1px solid var(--primary_l);
+  color: var(--primary_l);
+}
+.btn.btn-pk-f {
+  background-color: transparent;
+  border: 1px solid var(--primary_k);
+  color: var(--primary_k);
+}
+.btn.btn-p02-f {
+  background-color: transparent;
+  border: 1px solid var(--primary_02);
+  color: var(--primary_02);
+}
+.btn.btn-p03-f {
+  background-color: transparent;
+  border: 1px solid var(--primary_03);
+  color: var(--primary_03);
+}
+.btn.btn-p04-f {
+  background-color: transparent;
+  border: 1px solid var(--primary_04);
+  color: var(--primary_04);
+}
+.btn.btn-p05-f {
+  background-color: transparent;
+  border: 1px solid var(--primary_05);
+  color: var(--primary_05);
+}
+.btn.btn-e-f {
+  background-color: transparent;
+  border: 1px solid var(--error);
+  color: var(--error);
+}
+
+/*선형 버튼 컬러*/
+.btn.btn-pm-f > a {
+  color: var(--primary_m);
+}
+.btn.btn-pl-f > a {
+  color: var(--primary_l);
+}
+.btn.btn-pk-f > a {
+  color: var(--primary_k);
+}
+.btn.btn-p02-f > a {
+  color: var(--primary_02);
+}
+.btn.btn-p03-f > a {
+  color: var(--primary_03);
+}
+.btn.btn-p04-f > a {
+  color: var(--primary_04);
+}
+.btn.btn-p05-f > a {
+  color: var(--primary_05);
+}
+.btn.btn-e-f > a {
+  color: var(--error);
+}
+
+/* bar - 증간 선*/
+.bar {
+  height: 1px;
+  background-color: var(--primary_m);
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 100%;
+}
+.bar.bar-n40 {
+  background-color: var(--natural_40);
+}
+.bar.bar-n60 {
+  background-color: var(--natural_60);
+}
+.bar-md {
+  width: 10rem;
+}
+.bar-lg {
+  width: 20rem;
+}
+
+/*table*/
+.table-p td {
+  padding: 5px 1rem;
+  border: 1px solid var(--primary_l);
+}
+.table-p th {
+  padding: 5px 1rem;
+  border: 1px solid var(--primary_l);
+  background: var(--primary_l);
+}
+
+.table-gray td {
+  padding: 5px 1rem;
+  border: 1px solid var(--natural_50);
+}
+.table-gray th {
+  padding: 5px 1rem;
+  border: 1px solid var(--natural_50);
+  background: var(--natural_40);
+}
+
+/*scrollbar - 수정하지 말 것*/
+#device::-webkit-scrollbar {
+  width: 0px;
+}
+#device::-webkit-scrollbar-thumb {
+  background: transparent;
+}
+
+@media screen and (max-width: 240px) {
+  /* body, html 1rem 정의 */
+  html,
+  body {
+    font-size: 12px;
+  }
+}
